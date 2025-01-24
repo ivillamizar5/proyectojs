@@ -1,0 +1,79 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "123",
+      "password": "123"
+    },
+    {
+      "usuario": "pepe",
+      "password": "pepe",
+      "id": 2
+    }
+  ],
+  "tareas": [
+    {
+      "titulo": "asd",
+      "descripcion": "asd",
+      "fechaInicio": "2025-01-23T00:00:00.000Z",
+      "fechaFin": "2025-01-25T00:00:00.000Z",
+      "estado": "pendiente",
+      "id": 1,
+      "idusuario": "pepe"
+    },
+    {
+      "titulo": "asd",
+      "descripcion": "asd",
+      "fechaInicio": "2025-01-23T00:00:00.000Z",
+      "fechaFin": "2025-01-25T00:00:00.000Z",
+      "estado": "pendiente",
+      "id": 2,
+      "idusuario": "pepe"
+    },
+    {
+      "titulo": "asd",
+      "descripcion": "asd",
+      "fechaInicio": "2025-01-23T00:00:00.000Z",
+      "fechaFin": "2025-01-25T00:00:00.000Z",
+      "estado": "progreso",
+      "id": 3,
+      "idusuario": "pepe"
+    },
+    {
+      "titulo": "prueba",
+      "descripcion": "prueba",
+      "fechaInicio": "2025-01-24T00:00:00.000Z",
+      "fechaFin": "2025-01-31T00:00:00.000Z",
+      "estado": "progreso",
+      "id": 4,
+      "idusuario": "pepe"
+    },
+    {
+      "titulo": "pepe",
+      "descripcion": "pepe",
+      "fechaInicio": "2025-01-23T00:00:00.000Z",
+      "fechaFin": "2025-01-25T00:00:00.000Z",
+      "estado": "pendiente",
+      "idusuario": "pepe",
+      "id": 5
+    },
+    {
+      "titulo": "prueb",
+      "descripcion": "prueba",
+      "fechaInicio": "2025-01-19T00:00:00.000Z",
+      "fechaFin": "2025-01-12T00:00:00.000Z",
+      "estado": "completada",
+      "idusuario": "123",
+      "id": 6
+    },
+    {
+      "titulo": "asd",
+      "descripcion": "asd",
+      "fechaInicio": "2025-01-18T00:00:00.000Z",
+      "fechaFin": "2025-01-26T00:00:00.000Z",
+      "estado": "pendiente",
+      "idusuario": "pepe",
+      "id": 7
+    }
+  ]
+}

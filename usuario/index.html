@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<script src="./index.js" defer type="module"></script>
+<body>
+
+
+    <head >
+        <a id="cerrarsesion"> cerrarSesion</a>
+    </head>
+
+    <body>
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Iniciar Sesion</h1>
+                </div>
+    
+                <form class="login-form">
+                    <div class="control-group">
+                    <input type="text" class="login-field" value="" placeholder="username" id="usuario" required>
+                    <label class="login-field-icon fui-user" for="usuario"></label>
+                    </div>
+    
+                    <div class="control-group">
+                    <input type="password" class="login-field" value="" placeholder="password" id="password" required>
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary btn-large btn-block" id="ingresar" >Ingresar</button>
+                    <a class="login-link" href="./registro.html">crear usuario</a>
+                    <a class="login-link" href="../index.html">Volver al inicio</a>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</body>
+</html>            
