@@ -1,4 +1,4 @@
-import { crearTarea, mostrarTareas } from "./funcionesTareas.js";
+import { crearTarea, eliminarTarea, mostrarTareas } from "./funcionesTareas.js";
 import { cerrarSesion } from "./usuario/sesiones.js";
 const cerrar = document.querySelector("#cerrarsesion");
 let ruta = "../usuario/index.html"
@@ -33,12 +33,9 @@ async function validarTarea(e) {
     }
 
     if (valorEstado === "completada") {
-        await crearTarea((titulo.value).trim(), (descripcion.value).trim(), fechaInicio1, fechaFin1, valorEstado,)
+        await crearTarea((titulo.value).trim(), (descripcion.value).trim(), fechaInicio1, fechaFin1, valorEstado,usuario)
     }
 }
-
-
-
 
 async function pintarTareas() {
     let usuario = localStorage.getItem("usuario")
@@ -58,42 +55,76 @@ async function pintarTareas() {
                 let mesFin = fechafinal.getMonth(); 
                 let aniofin = fechafinal.getFullYear();
                 if (tareas.estado === "pendiente") {
-                    pendiente.innerHTML += `<form class="border " >  
-                    <input value ="${tareas.id}" id="id"> </input>
+                    pendiente.innerHTML += `<form class="border" id=${tareas.id}>  
+                  
                     <input value ="${tareas.titulo}" id="titulo"> </input>
                     <textarea  value ="${tareas.descripcion}" id="titulo">${tareas.descripcion} </textarea>
                     <input type="date" value ="${anioinicio}-${("0" + (mesinicio+ 1)).slice(-2)}-${diainicio}" class="fechaInicio"> </input>
-                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin"> </input>
-                    <button class="border" class ="editar"> Editar </button> 
-                    <button class="border" class="eliminar" > Eliminar </button> 
+                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin block"> </input>
+                    <button class="border editar" id=${tareas.id}> Editar </button> 
+                    <button class="border eliminar" id=${tareas.id} > Eliminar </button> 
                     </form>`
                 }
     
                 if (tareas.estado === "progreso") {
-                    progreso.innerHTML += `<form class="border " >  
-                    <input value ="${tareas.id}" id="id"> </input>
+                    progreso.innerHTML += `<form class="border " id=${tareas.id}>  
+                   
                     <input value ="${tareas.titulo}" id="titulo"> </input>
                     <textarea  value ="${tareas.descripcion}" id="titulo">${tareas.descripcion} </textarea>
                     <input type="date" value ="${anioinicio}-${("0" + (mesinicio+ 1)).slice(-2)}-${diainicio}" class="fechaInicio"> </input>
-                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin"> </input>
-                    <button class="border" class ="editar"> Editar </button> 
-                    <button class="border" class="eliminar" > Eliminar </button> 
+                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin block"> </input>
+            
+
+                    <button class="border editar" id=${tareas.id} > Editar </button> 
+                    <button class="border eliminar" id=${tareas.id} > Eliminar </button> 
+                    
                     </form>`
                 }
     
-                if (tareas.estado === "completado") {
-                    completado.innerHTML += `<form class="border " >  
-                    <input value ="${tareas.id}" id="id"> </input>
+                if (tareas.estado === "completada") {
+                    completado.innerHTML += `<form class="border " id=${tareas.id}>  
+        
                     <input value ="${tareas.titulo}" id="titulo"> </input>
                     <textarea  value ="${tareas.descripcion}" id="titulo">${tareas.descripcion} </textarea>
                     <input type="date" value ="${anioinicio}-${("0" + (mesinicio+ 1)).slice(-2)}-${diainicio}" class="fechaInicio"> </input>
-                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin"> </input>
-                    <button class="border" class ="editar"> Editar </button> 
-                    <button class="border" class="eliminar" > Eliminar </button> 
+                    <input type="date" value ="${aniofin}-${("0" + (mesFin+ 1)).slice(-2)}-${diaFin}" class="fechaFin block"> </input>
+    
+                    <button class="border editar" id=${tareas.id}> Editar </button> 
+                    <button class="border eliminar" id=${tareas.id} > Eliminar </button> 
                     </form>`
                 }
             });
+
+
         }
+
+        document.querySelectorAll(".eliminar").forEach(async(e) =>  
+        e.addEventListener("click",async(e)=>{
+            e.preventDefault();
+            await eliminarTarea(e.target.id)
+        })   
+        );
+
+        document.querySelectorAll(".editar").forEach(async(e) =>  
+        e.addEventListener("click",async(e)=>{
+            e.preventDefault();
+
+            let id = e.target.parentNode.id;
+            let titulo1 = e.target.parentNode.children[0].value;
+            let desc = e.target.parentNode.children[1].value;
+            let fechi = e.target.parentNode.children[2].value;
+            let fechafi = e.target.parentNode.children[3].value;
+      
+            titulo.value = titulo1
+            descripcion.value = desc
+            fechaInicio.value = fechi
+            fechaFin.value = fechafi
+            estado.value = e.target.parentNode.parentNode.id
+
+
+            
+
+        }) );
     }
 
 }
