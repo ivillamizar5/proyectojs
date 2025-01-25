@@ -61,8 +61,26 @@ async function mostrarTareas(usuario){
     } catch (error) {
         console.log(error)
     }
+}
 
 
+
+
+async function eliminarTarea(id){
+
+
+    try {
+
+        const result = await fetch(`http://localhost:3000/tareas/${id}`,{
+            method:"DELETE",
+        });
+
+        if(!result.ok){
+            throw new Error("Error al crear la tarea")
+        }
+    } catch (error) {
+        console.log(error)
+    }
 
 }
 
@@ -70,5 +88,4 @@ async function mostrarTareas(usuario){
 
 
 
-
-export{crearTarea,mostrarTareas}
+export{crearTarea,mostrarTareas, eliminarTarea}
