@@ -17,23 +17,23 @@
 
     <form id="form-tarea" class="flex justify-center flex-col w-1/2 sm:w-60 mb-4">
         <label for="titulo "> Título de la tarea.</label>
-        <input type="text" id="titulo"  placeholder="Título de la tarea" name="titulo" class="mb-3 border" >
+        <input type="text" id="titulo"  placeholder="Título de la tarea" name="titulo" class="mb-3 border" required>
         
         <label for="descripcion"> Descripción de la tarea.</label>
-        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la tarea."  class="mb-3 border" >
+        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la tarea."  class="mb-3 border" required>
 
         <label for="fecha-inicio"> Fecha de inicio. </label>
-        <input type="date" id="fecha-inicio" name="fecha-inicio" placeholder="Fecha de inicio." class="mb-3 border" >
+        <input type="date" id="fecha-inicio" name="fecha-inicio" placeholder="Fecha de inicio." class="mb-3 border" required>
 
         <label for="fecha-fin">Fecha de finalización.</label>
-        <input type="date" id="fecha-fin"  name="fecha-fin" placeholder="Fecha de finalización." class="mb-3 border" >
-
-        <select name="estado" id="estado">
+        <input type="date" id="fecha-fin"  name="fecha-fin" placeholder="Fecha de finalización." class="mb-3 border" required >
+        <label for="text">Estado</label>
+        <select name="estado" id="estado" required>
             <option value="pendiente"> Pendiente</option>
             <option value="progreso"> En progreso</option>
             <option value="completada"> Completadas</option>
         </select>
-
+        <button disabled id="editardeshabilitar"> Editar</button>
         <button id="btn-asignar" class="border mt-3" type="submit">Asignar</button>
     </form>
     
