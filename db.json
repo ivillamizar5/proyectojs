@@ -1,44 +1,19 @@
 {
   "usuarios": [
-    {
-      "id": "1",
-      "usuario": "123",
-      "password": "123"
-    },
+
     {
       "usuario": "pepe",
       "password": "pepe",
       "id": "2"
-    },
-    {
-      "id": "fdba",
-      "usuario": "carlos",
-      "password": "carlos"
-    },
-    {
-      "id": "b263",
-      "usuario": "car",
-      "password": "car"
-    },
-    {
-      "id": "104a",
-      "usuario": "ivan",
-      "password": "ivan"
     }
+   
+
   ],
   "tareas": [
+
     {
-      "titulo": "asd",
-      "descripcion": "asd",
-      "fechaInicio": "2025-01-18T00:00:00.000Z",
-      "fechaFin": "2025-01-26T00:00:00.000Z",
-      "estado": "progreso",
-      "idusuario": "pepe",
-      "id": "7"
-    },
-    {
-      "titulo": "ad",
-      "descripcion": "asd",
+      "titulo": "Contratacion de nuevo empleado",
+      "descripcion": "Contratacion de nuevo empleado para el departamento de ventas",
       "fechaInicio": "2025-01-18T00:00:00.000Z",
       "fechaFin": "2025-02-02T00:00:00.000Z",
       "estado": "pendiente",
@@ -46,48 +21,48 @@
       "id": "8"
     },
     {
-      "titulo": "asd",
-      "descripcion": "asd",
+      "titulo": "Evento de fin de año",
+      "descripcion": "Evento de fin de año para todos los empleados",
       "fechaInicio": "2025-01-17T00:00:00.000Z",
       "fechaFin": "2025-01-25T00:00:00.000Z",
       "estado": "completada",
-      "idusuario": "carlos",
+      "idusuario": "pepe",
       "id": "9"
     },
     {
       "id": "e1ff",
-      "titulo": "prueba",
-      "descripcion": "prueba",
+      "titulo": "Viaje de empleado a la feria",
+      "descripcion": "Viaje de empleado a la feria de tecnologia",
       "fechaInicio": "2025-04-20T00:00:00.000Z",
       "fechaFin": "2025-04-24T00:00:00.000Z",
       "estado": "pendiente",
-      "idusuario": "ivan"
+      "idusuario": "pepe"
     },
     {
       "id": "89c8",
-      "titulo": "proceso",
-      "descripcion": "proceso",
+      "titulo": "Realizar comunicado de prensa",
+      "descripcion": "Realizar comunicado de prensa para el lanzamiento del nuevo producto",
       "fechaInicio": "2025-04-20T00:00:00.000Z",
       "fechaFin": "2025-04-24T00:00:00.000Z",
       "estado": "progreso",
-      "idusuario": "ivan"
+      "idusuario": "pepe"
     },
     {
-      "titulo": "prueb",
-      "descripcion": "desarrollo de pruebas",
+      "titulo": "Programar reunion con el cliente",
+      "descripcion": "Programar reunion con el cliente para discutir el nuevo proyecto",
       "fechaInicio": "2025-04-23T00:00:00.000Z",
       "fechaFin": "2025-04-30T00:00:00.000Z",
       "estado": "completada",
-      "idusuario": "123",
+      "idusuario": "pepe",
       "id": "1c4e"
     },
     {
-      "titulo": "preba nuevan",
-      "descripcion": "desarrollo de  pruebas para el cliente numero 20",
+      "titulo": "Programar reunion semanal",
+      "descripcion": "Programar reunion semanal con el equipo de desarrollo",
       "fechaInicio": "2025-04-21T00:00:00.000Z",
       "fechaFin": "2025-04-29T00:00:00.000Z",
       "estado": "completada",
-      "idusuario": "123",
+      "idusuario": "pepe",
       "id": "ac52"
     }
   ]
