@@ -1,76 +1,66 @@
 import { crearSesion } from "./sesiones.js";
 
-
-async function validarUsuario(usuario,password){
+async function validarUsuario(usuario, password) {
     try {
-        const result = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}&&password=${password}`);
-
-        if(!result.ok){
-            throw new Error("Error al crear el usuario")
+        const result = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}`);
+        if (!result.ok) {
+            throw new Error("Error al verificar el usuario");
         }
         const data = await result.json();
-        if(data.length === 0){
-             crearSesion(usuario);
-            await crearUsuario(usuario,password)
+        if (data.length > 0) {
+            console.log("Usuario ya existe");
+            return false;
+        } else {
+            await crearUsuario(usuario, password);
+            crearSesion(usuario);
             window.location.href = "../index.html";
-            }else{
-            console.log("usuario ya creado")
+            return true;
         }
     } catch (error) {
-        console.log(error)
+        console.error("Error:", error);
+        return false;
     }
 }
 
-
-
-async function validarUsuarioInicio(usuario,password){
+async function validarUsuarioInicio(usuario, password) {
     try {
-        console.log("Aca")
-        const result = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}&&password=${password}`);
-
-        if(!result.ok){
-            throw new Error("Error al crear el usuario")
+        const result = await fetch(`http://localhost:3000/usuarios?usuario=${usuario}&password=${password}`);
+        if (!result.ok) {
+            throw new Error("Error al iniciar sesión");
         }
         const data = await result.json();
-        if(data.length === 0){
-            console.log("usuario no se ha creado")
-            }else{
-                crearSesion(usuario);
-                window.location.href = "../index.html";
-            
+        if (data.length === 0) {
+            console.log("Usuario no encontrado o contraseña incorrecta");
+            return false;
+        } else {
+            crearSesion(usuario);
+            window.location.href = "../index.html";
+            return true;
         }
     } catch (error) {
-        console.log(error)
+        console.error("Error:", error);
+        return false;
     }
 }
 
-
-
-
-
-
-async function crearUsuario(usuario,password){
+async function crearUsuario(usuario, password) {
     try {
-        const result = await fetch("http://localhost:3000/usuarios",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
+        const result = await fetch("http://localhost:3000/usuarios", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 usuario,
-                password, 
+                password
             })
         });
-
-        if(!result.ok){
-            throw new Error("Error al crear el usuario")
+        if (!result.ok) {
+            throw new Error("Error al crear el usuario");
         }
     } catch (error) {
-        console.log(error)
+        console.error("Error:", error);
     }
 }
 
-
-export{validarUsuario,validarUsuarioInicio}
-
-
+export { validarUsuario, validarUsuarioInicio };
