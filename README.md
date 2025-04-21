@@ -81,6 +81,6 @@ TaskApp utiliza **json-server** para simular una API REST con un archivo `db.jso
 **Visualización gestión de tareas**
 ![Gestion de tareas](./imagenes/gestionTareas.png)
 
-![Inicio de seseion](./imagenes/InicioSesion.png.png)
+![Inicio de seseion](./imagenes/InicioSesion.png)
 
-![Registrarse](./imagenes/Registro.png.png.png)
+![Registrarse](./imagenes/Registro.png)
